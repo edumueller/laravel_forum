@@ -2,24 +2,20 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
                 <div class="card">
                     <div class="card-header">Forum Threads</div>
 
                     <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                @foreach ($threads as $thread)
-                                    <article>
-                                        <h4>{{ $thread->title }}</h4>
-                                        <div class="body">{{ $thread->body }}</div>
-                                    </article>
-                                @endforeach
-                            </div>
-                        @endif
+                        @foreach ($threads as $thread)
+                            <article>
+                                <h4>{{ $thread->title }}</h4>
+                                <div class="body">{{ $thread->body }}</div>
+                            </article>
 
-                        You are logged in!
+                            <hr>
+                        @endforeach
                     </div>
                 </div>
             </div>
