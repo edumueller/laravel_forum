@@ -47,7 +47,8 @@ class ThreadsController extends Controller
      */
     public function show(Thread $thread)
     {
-        //
+//        $threads = Thread::latest()->get();
+        return view('threads.show', compact('thread'));
     }
 
     /**
