@@ -4,7 +4,11 @@ This file will be used to annotate important steps related to the project that w
 
 It will make the set-up easier for future developments.
 
+* Laravel
+	* XDebug set-up
+
 # Laravel
+#### Install
 1. run composer install
 2. [Set folder permissions for Laravel](#folder-permission-set-up)
 3. copy .env.example to .env
