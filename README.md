@@ -65,8 +65,13 @@ XDebug still won't start automatically with those settings, there are different 
 
 ## PHPUnit
 In windows, running phpunit from the console will give you an error, there are 2 workarounds:
-1. run the command like this: $ php vendor/phpunit/phpunit/phpunit
+1. run the command like this: 
+```bash
+$ php vendor/phpunit/phpunit/phpunit
+```
 2. create a file called phpunit.bat (or .cmd) at the root of your site containing this:
-`@ECHO OFF
- SET BIN_TARGET=%~dp0/vendor/phpunit/phpunit/phpunit
- php "%BIN_TARGET%" %*`
+```bat
+@ECHO OFF
+SET BIN_TARGET=%~dp0/vendor/phpunit/phpunit/phpunit
+php "%BIN_TARGET%" %*
+```
