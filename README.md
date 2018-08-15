@@ -5,19 +5,33 @@ This file will be used to annotate important steps related to the project that w
 It will make the set-up easier for future developments.
 
 # Laravel
-
 1. run composer install
-2. copy .env.example to .env
-3. run php artisan key:generate
-4. Setting folder permissions for Laravel:
-```JavaScript
-let a = 1
-```
-```Shell
+2. [Set folder permissions for Laravel](#folder-permission-set-up)
+3. copy .env.example to .env
+4. run php artisan key:generate
+
+## Folder Permission Set Up
+```bash
+# This line makes the webserver owner of the project folder:
 $ sudo chown -R www-data:www-data /path/to/your/laravel/root/directory
+
+# The next one fixes problems it may cause in case you have an FTP client logged in as your user (substitute ubuntu for your FTP user name):
+$ sudo usermod -a -G www-data ubuntu
+
+# Now Then you set all your directories to 755 and your files to 644:
+$ sudo find /path/to/your/laravel/root/directory -type f -exec chmod 644 {} \;
+
+# SET directory permissions:
+$ sudo find /path/to/your/laravel/root/directory -type d -exec chmod 755 {} \;
+
+# Give webserver permission to read and write to storage and cache:
+# OBS: These two commands consider you are inside the directory /path/to/your/laravel/root/directory, if you aren't, you can append /path/to/your/laravel/root/directory before the folder locations
+$ sudo chgrp -R www-data storage bootstrap/cache
+$ sudo chmod -R ug+rwx storage bootstrap/cache
+
+# If you want your user as owner:
+$ sudo chown -R my-user:www-data /path/to/your/laravel/root/directory
 ```
-$ sudo chown -R www-data:www-data /path/to/your/laravel/root/directory
-4. if the permissions on storage and cache folders are right, you're all set.
 
 # XDebug
 in php.ini:
