@@ -9,6 +9,14 @@ It will make the set-up easier for future developments.
 1. run composer install
 2. copy .env.example to .env
 3. run php artisan key:generate
+4. Setting folder permissions for Laravel:
+```JavaScript
+let a = 1
+```
+```Bash
+sudo chown -R www-data:www-data /path/to/your/laravel/root/directory
+```
+$ sudo chown -R www-data:www-data /path/to/your/laravel/root/directory
 4. if the permissions on storage and cache folders are right, you're all set.
 
 # XDebug
