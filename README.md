@@ -13,7 +13,7 @@ It will make the set-up easier for future developments.
 ```JavaScript
 let a = 1
 ```
-```bash
+```shell
 # print the contents of foo.txt to STDOUT
 $ sudo chown -R www-data:www-data /path/to/your/laravel/root/directory
 $ cat foo.txt
