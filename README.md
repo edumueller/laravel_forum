@@ -14,7 +14,10 @@ It will make the set-up easier for future developments.
 let a = 1
 ```
 ```bash
-sudo chown -R www-data:www-data /path/to/your/laravel/root/directory
+# print the contents of foo.txt to STDOUT
+$ sudo chown -R www-data:www-data /path/to/your/laravel/root/directory
+$ cat foo.txt
+cat foo.txt
 ```
 $ sudo chown -R www-data:www-data /path/to/your/laravel/root/directory
 4. if the permissions on storage and cache folders are right, you're all set.
